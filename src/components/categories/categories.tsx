@@ -14,12 +14,7 @@ import telur from "./images/telur.jpg";
 
 import "./categories.css";
 
-export interface Props {}
-
-class GroupCategories extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-  }
+class GroupCategories extends React.Component {
   render() {
     return (
       <Container>

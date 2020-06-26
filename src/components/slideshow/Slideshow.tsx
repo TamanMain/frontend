@@ -11,7 +11,7 @@ class Slideshow extends React.Component {
   render() {
     return (
       <div className="slideshow">
-        <img src={fruits} />
+        <img src={fruits} alt="" />
         {/* <img src={vegetables} />
         <img src={organic} />
         <img src={fish} /> */}

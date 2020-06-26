@@ -13,25 +13,27 @@ class CardsContainer extends React.Component {
       <Container>
         <div className="cards-container">
           <div className="cards-container-header">
-            <div className="cards-container-title">
-              <p>Baru Dipanen</p>
-              <span>Buah dan Sayuran yang baru dipanen</span>
+            <div className="card-container-details">
+              <p className="cards-container-title">Baru Dipanen</p>
+              <p className="cards-container-subtitle">
+                Buah dan Sayuran yang baru dipanen
+              </p>
             </div>
             <a href="/" className="cards-container-link">
-              See All »
+              <span>Lihat Semua</span>
             </a>
           </div>
-          <img src={image} className="cards-container-image" />
+          <img src={image} className="cards-container-image" alt="" />
           <div className="cards-container-list">
             <Card
               image={kol}
-              title="Kembang Kol Baru Selesai Dipanen Dari Kebun"
+              title="Kembang Kol"
               quantity="200 gram"
               price="Rp 27.800"
             />
             <Card
               image={kol}
-              title="Kembang Kol Baru Selesai Dipanen Dari Kebun"
+              title="Baru Selesai Dipanen Dari Kebun"
               quantity="10 gram"
               price="Rp 14.900"
             />
