@@ -9,7 +9,7 @@
   box-shadow: rgba(128, 128, 128, 0.16) 0 -2px 4px 0;
   padding: 0;
   display: flex;
-  max-width: 500px;
+  max-width: 480px;
   margin: 0 auto;
 }
 .navbar-bottom-item {

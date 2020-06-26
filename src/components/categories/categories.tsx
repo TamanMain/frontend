@@ -1,5 +1,5 @@
 import React from "react";
-import Group from "../group/group";
+import Group from "../container/container";
 import GroupCategoriesItem from "./categories-item";
 
 import sayur from "./images/sayur.png";
