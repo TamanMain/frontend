@@ -1,0 +1,24 @@
+.group-categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.group-categories-item {
+  display: flex;
+  width: 25%;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  color: #585858;
+}
+.group-categories-item img {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+}
+.group-categories-item span {
+  line-height: 1em;
+  margin: 0 6px;
+}
