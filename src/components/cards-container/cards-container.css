@@ -1,0 +1,31 @@
+.cards-container-header {
+  padding: 0 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cards-container-title p {
+  font-weight: bold;
+  font-size: 16px;
+}
+.cards-container-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #28a110;
+}
+.cards-container-image {
+  max-width: 100%;
+  height: auto;
+}
+.cards-container-list {
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  display: block;
+}
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}

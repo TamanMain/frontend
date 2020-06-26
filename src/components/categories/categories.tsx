@@ -1,6 +1,6 @@
 import React from "react";
-import Group from "../container/container";
-import GroupCategoriesItem from "./categories-item";
+import Container from "../container/container";
+import CategoriesItem from "./categories-item";
 
 import sayur from "./images/sayur.png";
 import buah from "./images/buah.png";
@@ -21,21 +21,20 @@ class GroupCategories extends React.Component<Props> {
     super(props);
   }
   render() {
-    const Item = GroupCategoriesItem;
     return (
-      <Group>
+      <Container>
         <div className="group-categories">
-          <Item link="/" name="Sayuran" icon={sayur} />
-          <Item link="/" name="Buah" icon={buah} />
-          <Item link="/" name="Organik" icon={organik} />
-          <Item link="/" name="Ikan" icon={ikan} />
-          <Item link="/" name="Bumbu" icon={bumbu} />
-          <Item link="/" name="Promo" icon={promo} />
-          <Item link="/" name="Terlaris" icon={terlaris} />
-          <Item link="/" name="Terbaru" icon={terbaru} />
-          <Item link="/" name="Telur" icon={telur} />
+          <CategoriesItem link="/" name="Sayuran" icon={sayur} />
+          <CategoriesItem link="/" name="Buah" icon={buah} />
+          <CategoriesItem link="/" name="Organik" icon={organik} />
+          <CategoriesItem link="/" name="Ikan" icon={ikan} />
+          <CategoriesItem link="/" name="Bumbu" icon={bumbu} />
+          <CategoriesItem link="/" name="Promo" icon={promo} />
+          <CategoriesItem link="/" name="Terlaris" icon={terlaris} />
+          <CategoriesItem link="/" name="Terbaru" icon={terbaru} />
+          <CategoriesItem link="/" name="Telur" icon={telur} />
         </div>
-      </Group>
+      </Container>
     );
   }
 }
