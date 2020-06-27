@@ -27,7 +27,7 @@ class CardsContainer extends React.Component {
           />
           <div className="cards-container-list">
             {ProductList.map((product) => {
-              return <Card product={product} />;
+              return <Card product={product} key={product._id} />;
             })}
           </div>
         </div>

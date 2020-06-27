@@ -6,12 +6,16 @@ import "./product.css";
 
 class Product extends React.Component {
   render() {
-    const product = ProductList[0];
-    return (
+    const id = window.location.pathname.replace("/p/", "");
+    const product = ProductList.find((item) => item._id === id);
+
+    console.log(product);
+
+    return product ? (
       <div className="product">
         <div className="product-images">
           <div className="product-images-list">
-            <img src={product.images[0]} alt="" />
+            <img src={"../" + product.images[0]} alt="" />
           </div>
         </div>
         <Container>
@@ -26,6 +30,8 @@ class Product extends React.Component {
           </div>
         </Container>
       </div>
+    ) : (
+      "404"
     );
   }
 }

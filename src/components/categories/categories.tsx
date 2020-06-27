@@ -16,18 +16,19 @@ import "./categories.css";
 
 class GroupCategories extends React.Component {
   render() {
+    const CItem = CategoriesItem;
     return (
       <Container>
         <div className="group-categories">
-          <CategoriesItem link="/" name="Sayuran" icon={sayur} />
-          <CategoriesItem link="/" name="Buah" icon={buah} />
-          <CategoriesItem link="/" name="Organik" icon={organik} />
-          <CategoriesItem link="/" name="Ikan" icon={ikan} />
-          <CategoriesItem link="/" name="Bumbu" icon={bumbu} />
-          <CategoriesItem link="/" name="Promo" icon={promo} />
-          <CategoriesItem link="/" name="Terlaris" icon={terlaris} />
-          <CategoriesItem link="/" name="Terbaru" icon={terbaru} />
-          <CategoriesItem link="/" name="Telur" icon={telur} />
+          <CItem link="/search?p=sayuran" name="Sayuran" icon={sayur} />
+          <CItem link="/search?p=buah" name="Buah" icon={buah} />
+          <CItem link="/search?p=organik" name="Organik" icon={organik} />
+          <CItem link="/search?p=ikan" name="Ikan" icon={ikan} />
+          <CItem link="/search?p=bumbu" name="Bumbu" icon={bumbu} />
+          <CItem link="/search?p=promo" name="Promo" icon={promo} />
+          <CItem link="/search?p=terlaris" name="Terlaris" icon={terlaris} />
+          <CItem link="/search?p=terbaru" name="Terbaru" icon={terbaru} />
+          <CItem link="/search?p=telur" name="Telur" icon={telur} />
         </div>
       </Container>
     );

@@ -17,7 +17,7 @@ class NavBarBottom extends React.Component {
         <NavBarBottomItem link="/favorite" name="Favorite" icon={favorite} />
         <NavBarBottomItem link="/cart" name="Cart" icon={cart} />
         <NavBarBottomItem link="/chat" name="Chat" icon={chat} />
-        <NavBarBottomItem link="/accunt" name="Account" icon={account} />
+        <NavBarBottomItem link="/account" name="Account" icon={account} />
       </div>
     );
   }

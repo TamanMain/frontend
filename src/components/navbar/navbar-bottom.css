@@ -28,6 +28,10 @@
   font-size: 12px;
   text-decoration: none;
 }
+.navbar-bottom-item.active {
+  color: #07a100;
+  font-weight: bold;
+}
 .navbar-bottom-item img {
   height: 20px;
 }
