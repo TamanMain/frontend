@@ -14,7 +14,7 @@
 }
 .navbar-bottom-item {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   position: relative;
   color: #504b4b;
@@ -25,13 +25,14 @@
   width: 20%;
   cursor: pointer;
   flex: 1 1 0%;
-  font-size: 12px;
+  font-size: 0.8em;
   text-decoration: none;
 }
 .navbar-bottom-item.active {
+  font-size: 0.9em;
   color: #07a100;
-  font-weight: bold;
 }
 .navbar-bottom-item img {
+  margin-bottom: 2px;
   height: 20px;
 }
