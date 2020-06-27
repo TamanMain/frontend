@@ -1,14 +1,9 @@
 import React from "react";
 import "./product-details.css";
+import ProductObject from "../../libs/ProductObject";
 
 interface Props {
-  name: string;
-  quantity: number;
-  unit: string;
-  price: number;
-  isDiscount?: boolean;
-  discount?: number;
-  discountPrice?: number;
+  product: ProductObject;
 }
 
 function formatToRupiah(price: number): string {
@@ -23,18 +18,18 @@ class ProductDetails extends React.Component<Props> {
       unit,
       price,
       isDiscount,
-      discount,
+      discountPercent,
       discountPrice,
-    } = this.props;
+    } = this.props.product;
 
     return (
-      <div className="product-details">
-        <p className="product-title">{name}</p>
+      <div>
+        <p className="product-name">{name}</p>
         <p className="product-quantity">{`${quantity} ${unit}`}</p>
         {isDiscount ? (
           <div>
             <span className="product-price">{formatToRupiah(price)}</span>
-            <span className="product-discount">{`${discount}%`}</span>
+            <span className="product-discount">{`${discountPercent}%`}</span>
             <p className="product-discount-price">
               {formatToRupiah(discountPrice ? discountPrice : price)}
             </p>

@@ -1,10 +1,7 @@
 import React from "react";
 import Container from "../container/container";
 import Card from "../card/card";
-
-import image from "./image.jpg";
-import kol from "./kol.jpg";
-
+import ProductList from "../../libs/product-list";
 import "./cards-container.css";
 
 class CardsContainer extends React.Component {
@@ -23,32 +20,15 @@ class CardsContainer extends React.Component {
               <span>Lihat Semua</span>
             </a>
           </div>
-          <img src={image} className="cards-container-image" alt="" />
+          <img
+            src={"/images/header.jpg"}
+            className="cards-container-image"
+            alt=""
+          />
           <div className="cards-container-list">
-            <Card
-              image={kol}
-              title="Kembang Kol"
-              quantity="200 gram"
-              price="Rp 27.800"
-            />
-            <Card
-              image={kol}
-              title="Baru Selesai Dipanen Dari Kebun"
-              quantity="10 gram"
-              price="Rp 14.900"
-            />
-            <Card
-              image={kol}
-              title="Kembang Kol Baru Selesai Dipanen Dari Kebun"
-              quantity="10 gram"
-              price="Rp 14.900"
-            />
-            <Card
-              image={kol}
-              title="Kembang Kol Baru Selesai Dipanen Dari Kebun"
-              quantity="10 gram"
-              price="Rp 14.900"
-            />
+            {ProductList.map((product) => {
+              return <Card product={product} />;
+            })}
           </div>
         </div>
       </Container>

@@ -1,23 +1,21 @@
 import React from "react";
-
+import ProductObject from "../../libs/ProductObject";
+import ProductDetails from "../product/product-details";
 import "./card.css";
 
 interface Props {
-  image: string;
-  title: string;
-  quantity: string;
-  price: string;
+  product: ProductObject;
 }
 
 class Card extends React.Component<Props> {
   render() {
-    const { image, title, quantity, price } = this.props;
+    const { product } = this.props;
     return (
       <div className="card">
-        <img src={image} className="card-image" alt="" />
-        <p className="card-title">{title}</p>
-        <p className="card-quantity">{quantity}</p>
-        <p className="card-price">{price}</p>
+        <img src={product.images[0]} className="card-image" alt="" />
+        <div className="card-details">
+          <ProductDetails product={product} />
+        </div>
         <button type="button" className="card-button">
           Beli
         </button>
