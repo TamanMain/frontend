@@ -1,22 +1,27 @@
 .group-categories {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 4px;
 }
 
 .group-categories-item {
   display: flex;
   width: 25%;
+  min-width: 72px;
   cursor: pointer;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
   text-align: center;
   color: #585858;
+  margin-bottom: 8px;
 }
 .group-categories-item img {
   width: 40px;
   height: 40px;
-  margin: 4px;
+  margin-top: 0;
+  margin-bottom: 4px;
 }
 .group-categories-item span {
   line-height: 1em;

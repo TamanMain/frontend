@@ -56,7 +56,7 @@
   content: "";
   padding-right: 6px;
 }
-::-webkit-scrollbar {
+.cards-container-list::-webkit-scrollbar {
   display: none;
   width: 0px; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
