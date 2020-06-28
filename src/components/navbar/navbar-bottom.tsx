@@ -13,11 +13,11 @@ class NavBarBottom extends React.Component {
   render() {
     return (
       <div className="navbar-bottom">
-        <NavBarBottomItem link="/" name="Shop" icon={shop} />
-        <NavBarBottomItem link="/favorite" name="Favorite" icon={favorite} />
-        <NavBarBottomItem link="/cart" name="Cart" icon={cart} />
-        <NavBarBottomItem link="/chat" name="Chat" icon={chat} />
-        <NavBarBottomItem link="/account" name="Account" icon={account} />
+        <NavBarBottomItem link="/" name="Belanja" icon={shop} />
+        <NavBarBottomItem link="/favorite" name="Disukai" icon={favorite} />
+        <NavBarBottomItem link="/cart" name="Keranjang" icon={cart} />
+        <NavBarBottomItem link="/chat" name="Pesan" icon={chat} />
+        <NavBarBottomItem link="/account" name="Akun" icon={account} />
       </div>
     );
   }
