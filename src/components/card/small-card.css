@@ -1,0 +1,4 @@
+.small-card {
+  flex-shrink: 0; /* This needed to enable set width of flex items */
+  width: 140px;
+}

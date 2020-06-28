@@ -32,10 +32,14 @@ const ProductList: ProductObject[] = [
   },
   {
     _id: "3",
-    name: "Pisang",
+    name:
+      "Pisang Fresh Mulus Warna Kuning Cerah Dipetik Dari Perkebunan Pribadi",
     quantity: 1,
     unit: "buah",
-    price: 1700,
+    price: 10000,
+    isDiscount: true,
+    discountPercent: 53,
+    discountPrice: 4700,
     images: ["./images/pisang.jpg"],
   },
   {

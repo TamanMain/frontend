@@ -23,19 +23,23 @@ class ProductDetails extends React.Component<Props> {
     } = this.props.product;
 
     return (
-      <div>
-        <p className="product-name">{name}</p>
-        <p className="product-quantity">{`${quantity} ${unit}`}</p>
+      <div className="product-details">
+        <p className="product-details-name">{name}</p>
+        <p className="product-details-quantity">{`${quantity} ${unit}`}</p>
         {isDiscount ? (
           <div>
-            <span className="product-price">{formatToRupiah(price)}</span>
-            <span className="product-discount">{`${discountPercent}%`}</span>
-            <p className="product-discount-price">
+            <span className="product-details-price">
+              {formatToRupiah(price)}
+            </span>
+            <span className="product-details-discount">{`${discountPercent}%`}</span>
+            <p className="product-details-discount-price">
               {formatToRupiah(discountPrice ? discountPrice : price)}
             </p>
           </div>
         ) : (
-          <p className="product-discount-price">{formatToRupiah(price)}</p>
+          <p className="product-details-discount-price">
+            {formatToRupiah(price)}
+          </p>
         )}
       </div>
     );

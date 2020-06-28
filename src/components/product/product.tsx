@@ -21,7 +21,7 @@ class Product extends React.Component {
           </div>
         </div>
         <Container>
-          <div className="product-details">
+          <div className="mx-3">
             <ProductDetails product={product} />
           </div>
         </Container>

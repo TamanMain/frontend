@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../container/container";
-import Card from "../card/card";
+import SmallCard from "../card/small-card";
 import ProductList from "../../libs/product-list";
 import "./cards-container.css";
 
@@ -27,7 +27,7 @@ class CardsContainer extends React.Component {
           />
           <div className="cards-container-list">
             {ProductList.map((product) => {
-              return <Card product={product} key={product._id} />;
+              return <SmallCard product={product} key={product._id} />;
             })}
           </div>
         </div>
