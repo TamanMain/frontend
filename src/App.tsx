@@ -6,6 +6,7 @@ import Categories from "./components/categories/categories";
 import Slideshow from "./components/slideshow/Slideshow";
 import CardsContainer from "./components/cards-container/cards-container";
 import Product from "./components/product/product";
+import SearchPage from "./pages/search/search-page";
 import ProductNotFound from "./components/product/product-not-found";
 
 import "./App.css";
@@ -28,7 +29,7 @@ function App() {
           <Product />
         </Route>
         <Route path="/search">
-          <ProductNotFound />
+          <SearchPage />
         </Route>
         <Route path="/">
           <ProductNotFound />
