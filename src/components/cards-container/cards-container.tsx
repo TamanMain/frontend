@@ -16,7 +16,7 @@ class CardsContainer extends React.Component {
                 Buah dan Sayuran yang baru dipanen
               </p>
             </div>
-            <a href="/" className="cards-container-link">
+            <a href="/search?q=baru+dipanen" className="cards-container-link">
               <span>Lihat Semua</span>
             </a>
           </div>

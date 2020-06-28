@@ -5,11 +5,13 @@ import ProductList from "./../../libs/product-list";
 import "./product.css";
 
 class Product extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const id = window.location.pathname.replace("/p/", "");
     const product = ProductList.find((item) => item._id === id);
-
-    console.log(product);
 
     return product ? (
       <div className="product">

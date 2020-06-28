@@ -6,6 +6,7 @@ import Categories from "./components/categories/categories";
 import Slideshow from "./components/slideshow/Slideshow";
 import CardsContainer from "./components/cards-container/cards-container";
 import Product from "./components/product/product";
+import ProductNotFound from "./components/product/product-not-found";
 
 import "./App.css";
 
@@ -26,8 +27,12 @@ function App() {
         <Route path="/p/:id">
           <Product />
         </Route>
-        <Route path="/search">No product found!</Route>
-        <Route path="/">Page Not Found: 404</Route>
+        <Route path="/search">
+          <ProductNotFound />
+        </Route>
+        <Route path="/">
+          <ProductNotFound />
+        </Route>
       </Switch>
 
       <NavBarBottom />
