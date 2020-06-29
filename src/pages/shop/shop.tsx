@@ -13,6 +13,9 @@ class Shop extends React.Component {
         <Slideshow />
         <Categories />
         <CardsContainer />
+        <CardsContainer />
+        <CardsContainer />
+        <CardsContainer />
         <NavBarBottom />
       </React.Fragment>
     );
