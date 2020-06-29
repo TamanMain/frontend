@@ -3,8 +3,9 @@ import ProductList from "./../../libs/product-list";
 import ImageSquare from "./../../components/image/image-square";
 import Container from "../../components/container/container";
 import CardDetails from "./../../components/card/card-details";
-import "./product.css";
 import ContainerWithTitle from "./../../components/container/container-with-title";
+import "./product.css";
+import PageNotFound from "../PageNotFound/page-not-found";
 
 class Product extends React.Component {
   componentDidMount() {
@@ -16,7 +17,7 @@ class Product extends React.Component {
     const product = ProductList.find((item) => item._id === id);
 
     return product ? (
-      <div>
+      <React.Fragment>
         <ImageSquare imageUrl={"../" + product.images[0]} />
         <Container>
           <div className="mx-3">
@@ -31,9 +32,9 @@ class Product extends React.Component {
             </div>
           </div>
         </ContainerWithTitle>
-      </div>
+      </React.Fragment>
     ) : (
-      "404"
+      <PageNotFound />
     );
   }
 }
