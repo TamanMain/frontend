@@ -1,10 +1,12 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import NavBarBottom from "./components/navbar/navbar-bottom";
-import Categories from "./components/categories/categories";
-import Slideshow from "./components/slideshow/Slideshow";
-import CardsContainer from "./components/cards-container/cards-container";
+import Shop from "./pages/shop/shop";
+import Cart from "./pages/cart/cart";
+import Chat from "./pages/chat/chat";
+import Favorite from "./pages/favorite/favorite";
+import Account from "./pages/account/account";
+
 import Product from "./pages/product/product";
 import SearchPage from "./pages/search/search-page";
 import PageNotFound from "./pages/PageNotFound/page-not-found";
@@ -16,14 +18,20 @@ function App() {
     <div className="app">
       <Switch>
         <Route path="/" exact>
-          <Slideshow />
-          <Categories />
-          <CardsContainer />
+          <Shop />
         </Route>
-        <Route path="/favorite">Favorite</Route>
-        <Route path="/cart">Cart</Route>
-        <Route path="/chat">Chat</Route>
-        <Route path="/account">Account</Route>
+        <Route path="/favorite">
+          <Favorite />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+        <Route path="/chat">
+          <Chat />
+        </Route>
+        <Route path="/account">
+          <Account />
+        </Route>
 
         <Route path="/p/:id">
           <Product />
@@ -35,8 +43,6 @@ function App() {
           <PageNotFound />
         </Route>
       </Switch>
-
-      <NavBarBottom />
     </div>
   );
 }
