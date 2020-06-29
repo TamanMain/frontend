@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3.5rem;
+  height: 3rem;
   z-index: 1024;
   background-color: white;
   box-shadow: rgba(128, 128, 128, 0.16) 0 -2px 4px 0;
@@ -21,7 +21,7 @@
   text-align: center;
   white-space: nowrap;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 0.25rem;
   width: 20%;
   cursor: pointer;
   flex: 1 1 0%;
@@ -29,10 +29,12 @@
   text-decoration: none;
 }
 .navbar-bottom-item.active {
-  font-size: 0.9em;
   color: #07a100;
 }
 .navbar-bottom-item img {
   height: 20px;
   margin-bottom: 2px;
+}
+.navbar-bottom-item.active img {
+  height: 24px;
 }

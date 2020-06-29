@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ProductObject from "../../libs/ProductObject";
 import CardDetails from "./card-details";
 import "./card.css";
+import ImageSquare from "../image/image-square";
 
 interface Props {
   product: ProductObject;
@@ -17,12 +18,8 @@ class Card extends React.Component<Props> {
         <div className="p-1 ">
           <Link to={`/p/${product._id}`}>
             <div className="card">
-              <div className="card-image">
-                <div className="card-image-container">
-                  <img src={product.images[0]} alt="" />
-                </div>
-              </div>
-              <div className="py-1 px-2">
+              <ImageSquare imageUrl={product.images[0]} />
+              <div className="p-1">
                 <CardDetails product={product} />
               </div>
               <button type="button" className="card-button">

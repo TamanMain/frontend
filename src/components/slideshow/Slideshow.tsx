@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { Carousel } from "react-responsive-carousel";
+import ImageWide from "../image/image-wide";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 import "./slideshow.css";
 
 class Slideshow extends React.Component {
@@ -22,16 +21,16 @@ class Slideshow extends React.Component {
         emulateTouch={false}
       >
         <Link to="/search?p=fruits">
-          <img src={"/images/slideshow/fruits.jpg"} alt="" />
+          <ImageWide imageUrl={"/images/slideshow/fruits.jpg"} />
         </Link>
         <Link to="/search?p=vegetables">
-          <img src={"/images/slideshow/vegetables.jpg"} alt="" />
+          <ImageWide imageUrl={"/images/slideshow/vegetables.jpg"} />
         </Link>
         <Link to="/search?p=organic">
-          <img src={"/images/slideshow/organic.jpg"} alt="" />
+          <ImageWide imageUrl={"/images/slideshow/organic.jpg"} />
         </Link>
         <Link to="/search?p=fish">
-          <img src={"/images/slideshow/fish.jpg"} alt="" />
+          <ImageWide imageUrl={"/images/slideshow/fish.jpg"} />
         </Link>
       </Carousel>
     );
