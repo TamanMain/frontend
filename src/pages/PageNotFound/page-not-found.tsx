@@ -1,12 +1,12 @@
 import React from "react";
-import "./product-not-found.css";
+import "./page-not-found.css";
 
-class ProductNotFound extends React.Component {
+class PageNotFound extends React.Component {
   render() {
     return (
-      <div className="product-not-found">
+      <div className="page-not-found">
         <img src="/images/common/product_not_found.png" alt="" />
-        <h3>Produk Tidak Ditemukan</h3>
+        <div className="page-not-found-title">Produk Tidak Ditemukan</div>
         <p>
           Tidak menemukan produk apapun di database.
           <br />
@@ -20,4 +20,4 @@ class ProductNotFound extends React.Component {
   }
 }
 
-export default ProductNotFound;
+export default PageNotFound;

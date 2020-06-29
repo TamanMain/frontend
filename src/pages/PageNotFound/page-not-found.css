@@ -1,25 +1,24 @@
-.product-not-found {
+.page-not-found {
   width: 100%;
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.product-not-found img {
+.page-not-found img {
   width: 200px;
   height: auto;
-  margin-bottom: 16px;
 }
-.product-not-found h3 {
-  margin: 0;
-  margin-bottom: 16px;
+.page-not-found-title {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 0.5rem;
 }
-.product-not-found p {
+.page-not-found p {
   color: #9e9e9e;
-  margin-bottom: 16px;
 }
-.product-not-found button {
+.page-not-found button {
   background-color: white;
   border-radius: 4px;
   color: black;
@@ -28,4 +27,5 @@
   cursor: pointer;
   text-decoration: none;
   padding: 0.2em 0.6em;
+  margin-top: 2rem;
 }

@@ -5,9 +5,9 @@ import NavBarBottom from "./components/navbar/navbar-bottom";
 import Categories from "./components/categories/categories";
 import Slideshow from "./components/slideshow/Slideshow";
 import CardsContainer from "./components/cards-container/cards-container";
-import Product from "./components/product/product";
+import Product from "./pages/product/product";
 import SearchPage from "./pages/search/search-page";
-import ProductNotFound from "./components/product/product-not-found";
+import PageNotFound from "./pages/PageNotFound/page-not-found";
 
 import "./App.css";
 
@@ -32,7 +32,7 @@ function App() {
           <SearchPage />
         </Route>
         <Route path="/">
-          <ProductNotFound />
+          <PageNotFound />
         </Route>
       </Switch>
 
