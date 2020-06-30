@@ -1,8 +1,10 @@
 import React from "react";
 import "./navbar-bottom.css";
 
-const NavbarBottom: React.SFC = (props) => {
-  return <div className="navbar-bottom">{props.children}</div>;
-};
+class NavbarBottom extends React.Component {
+  render() {
+    return <div className="navbar-bottom">{this.props.children}</div>;
+  }
+}
 
 export default NavbarBottom;

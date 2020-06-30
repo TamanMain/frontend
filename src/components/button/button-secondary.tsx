@@ -4,11 +4,13 @@ import Button from "./button";
 
 interface Props {
   name: string;
+  action?: (e: React.MouseEvent) => void;
 }
 
 class ButtonSecondary extends React.Component<Props> {
   render() {
-    return <Button name={this.props.name} className="button-secondary" />;
+    const { name, action } = this.props;
+    return <Button name={name} action={action} className="button-secondary" />;
   }
 }
 
