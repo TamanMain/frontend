@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ProductObject from "../../libs/ProductObject";
 import CardDetails from "./card-details";
-import "./card.css";
 import ImageSquare from "../image/image-square";
+import Button from "../button/button";
+import "./card.css";
 
 interface Props {
   product: ProductObject;
@@ -16,17 +17,17 @@ class Card extends React.Component<Props> {
     return (
       <div className={cardWidthClass ? cardWidthClass : "col-50"}>
         <div className="p-1 ">
-          <Link to={`/p/${product._id}`}>
-            <div className="card">
+          <div className="card">
+            <Link to={`/p/${product._id}`}>
               <ImageSquare imageUrl={product.images[0]} />
               <div className="p-1">
                 <CardDetails product={product} />
               </div>
-              <button type="button" className="card-button">
-                Beli
-              </button>
+            </Link>
+            <div className="p-1">
+              <Button name="Beli" />
             </div>
-          </Link>
+          </div>
         </div>
       </div>
     );
