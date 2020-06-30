@@ -4,8 +4,9 @@ import ImageSquare from "./../../components/image/image-square";
 import Container from "../../components/container/container";
 import CardDetails from "./../../components/card/card-details";
 import ContainerWithTitle from "./../../components/container/container-with-title";
-import "./product.css";
 import PageNotFound from "../PageNotFound/page-not-found";
+import ProductNavbar from "../../components/navbar/product-navbar";
+import "./product.css";
 
 class Product extends React.Component {
   componentDidMount() {
@@ -32,6 +33,7 @@ class Product extends React.Component {
             </div>
           </div>
         </ContainerWithTitle>
+        <ProductNavbar />
       </React.Fragment>
     ) : (
       <PageNotFound />

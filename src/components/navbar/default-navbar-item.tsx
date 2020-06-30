@@ -7,16 +7,16 @@ interface NavBarBottomItemProps {
   icon: string;
 }
 
-class NavBarBottomItem extends React.Component<NavBarBottomItemProps> {
+class DefaultNavbarItem extends React.Component<NavBarBottomItemProps> {
   render() {
     const { link, name, icon } = this.props;
     return (
-      <NavLink to={link} exact className="navbar-bottom-item">
-        <img src={icon} alt={name} />
+      <NavLink to={link} exact className="default-navbar-item">
+        <img src={icon} alt="" />
         <span>{name}</span>
       </NavLink>
     );
   }
 }
 
-export default NavBarBottomItem;
+export default DefaultNavbarItem;

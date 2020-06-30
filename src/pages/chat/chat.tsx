@@ -1,5 +1,5 @@
 import React from "react";
-import NavBarBottom from "../../components/navbar/navbar-bottom";
+import DefaultNavbar from "../../components/navbar/default-navbar";
 import "./chat.css";
 
 class Chat extends React.Component {
@@ -7,7 +7,7 @@ class Chat extends React.Component {
     return (
       <React.Fragment>
         Chat
-        <NavBarBottom />
+        <DefaultNavbar />
       </React.Fragment>
     );
   }

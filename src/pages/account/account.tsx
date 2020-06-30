@@ -1,5 +1,5 @@
 import React from "react";
-import NavBarBottom from "../../components/navbar/navbar-bottom";
+import DefaultNavbar from "../../components/navbar/default-navbar";
 import "./account.css";
 
 class Account extends React.Component {
@@ -7,7 +7,7 @@ class Account extends React.Component {
     return (
       <React.Fragment>
         Account
-        <NavBarBottom />
+        <DefaultNavbar />
       </React.Fragment>
     );
   }

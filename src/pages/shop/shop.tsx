@@ -1,5 +1,5 @@
 import React from "react";
-import NavBarBottom from "../../components/navbar/navbar-bottom";
+import DefaultNavbar from "../../components/navbar/default-navbar";
 import Slideshow from "./../../components/slideshow/Slideshow";
 import CardsContainer from "./../../components/cards-container/cards-container";
 import Categories from "../../components/categories/categories";
@@ -16,7 +16,7 @@ class Shop extends React.Component {
         <CardsContainer />
         <CardsContainer />
         <CardsContainer />
-        <NavBarBottom />
+        <DefaultNavbar />
       </React.Fragment>
     );
   }

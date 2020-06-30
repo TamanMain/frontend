@@ -1,0 +1,27 @@
+.default-navbar-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  color: #504b4b;
+  text-align: center;
+  white-space: nowrap;
+  flex-direction: column;
+  padding: 0.25rem;
+  width: 20%;
+  cursor: pointer;
+  flex: 1 1 0%;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+.default-navbar-item.active {
+  color: #07a100;
+}
+.default-navbar-item img {
+  height: 20px;
+  margin-bottom: 2px;
+}
+.default-navbar-item.active img {
+  filter: invert(86%) sepia(29%) saturate(771%) hue-rotate(85deg)
+    brightness(100%) contrast(50%);
+}
