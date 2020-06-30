@@ -1,6 +1,6 @@
 import ProductObject from "./ProductObject";
 
-const ProductList: ProductObject[] = [
+const ProductsData: ProductObject[] = [
   {
     _id: "0",
     name: "Nanas Madu",
@@ -60,4 +60,4 @@ const ProductList: ProductObject[] = [
   },
 ];
 
-export default ProductList;
+export default ProductsData;

@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../container/container";
 import SmallCard from "../card/small-card";
-import ProductList from "../../libs/product-list";
+import ProductsData from "../../libs/products-data";
 import "./cards-container.css";
 
 class CardsContainer extends React.Component {
@@ -26,7 +26,7 @@ class CardsContainer extends React.Component {
             alt=""
           />
           <div className="cards-container-list">
-            {ProductList.map((product) => {
+            {ProductsData.map((product) => {
               return <SmallCard product={product} key={product._id} />;
             })}
           </div>

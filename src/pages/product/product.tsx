@@ -1,5 +1,5 @@
 import React from "react";
-import ProductList from "./../../libs/product-list";
+import ProductsData from "../../libs/products-data";
 import ImageSquare from "./../../components/image/image-square";
 import Container from "../../components/container/container";
 import CardDetails from "./../../components/card/card-details";
@@ -14,7 +14,7 @@ class Product extends React.Component {
 
   render() {
     const id = window.location.pathname.replace("/p/", "");
-    const product = ProductList.find((item) => item._id === id);
+    const product = ProductsData.find((item) => item._id === id);
 
     return product ? (
       <React.Fragment>
