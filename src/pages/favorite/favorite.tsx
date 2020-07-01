@@ -6,8 +6,8 @@ import Product from "./../../libs/ProductObject";
 import account from "../../data/account-data.json";
 import "./favorite.css";
 
-function getFavorite(products: Product[], filter?: number[]): Product[] {
-  return products.filter((p) => filter?.includes(p._id));
+function getFavorite(products: Product[], filter: number[]): Product[] {
+  return products.filter((p) => filter.includes(p._id));
 }
 
 const Favorite: React.FC = () => {
