@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProductsData from "../../libs/products-data";
 import ImageSquare from "./../../components/image/image-square";
 import Container from "../../components/container/container";
@@ -8,37 +8,35 @@ import PageNotFound from "../PageNotFound/page-not-found";
 import ProductNavbar from "../../components/navbar/product-navbar";
 import "./product.css";
 
-class Product extends React.Component {
-  componentDidMount() {
+const Product: React.FC = () => {
+  useEffect(() => {
     window.scrollTo(0, 0);
-  }
+  }, []); // componentDidMount
 
-  render() {
-    const id = window.location.pathname.replace("/p/", "");
-    const product = ProductsData.find((item) => item._id === id);
+  const id = window.location.pathname.replace("/p/", "");
+  const product = ProductsData.find((item) => item._id === id);
 
-    return product ? (
-      <React.Fragment>
-        <ImageSquare imageUrl={"../" + product.images[0]} />
-        <Container>
+  return product ? (
+    <React.Fragment>
+      <ImageSquare imageUrl={"../" + product.images[0]} />
+      <Container>
+        <div className="mx-3">
+          <CardDetails product={product} />
+        </div>
+      </Container>
+      <ContainerWithTitle title="Informasi Produk">
+        <div className="product-informations">
           <div className="mx-3">
-            <CardDetails product={product} />
+            <p>{product.name}</p>
+            <p className="my-2">{product.description}</p>
           </div>
-        </Container>
-        <ContainerWithTitle title="Informasi Produk">
-          <div className="product-informations">
-            <div className="mx-3">
-              <p>{product.name}</p>
-              <p className="my-2">{product.description}</p>
-            </div>
-          </div>
-        </ContainerWithTitle>
-        <ProductNavbar />
-      </React.Fragment>
-    ) : (
-      <PageNotFound />
-    );
-  }
-}
+        </div>
+      </ContainerWithTitle>
+      <ProductNavbar />
+    </React.Fragment>
+  ) : (
+    <PageNotFound />
+  );
+};
 
 export default Product;

@@ -5,15 +5,13 @@ interface Props {
   title: string;
 }
 
-class ContainerWithTitle extends React.Component<Props> {
-  render() {
-    return (
-      <div className="container">
-        <div className="container-title">{this.props.title}</div>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const ContainerWithTitle: React.FC<Props> = ({ title, children }) => {
+  return (
+    <div className="container">
+      <div className="container-title">{title}</div>
+      {children}
+    </div>
+  );
+};
 
 export default ContainerWithTitle;

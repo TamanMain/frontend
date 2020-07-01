@@ -5,12 +5,8 @@ interface Props {
   imageUrl: string;
 }
 
-class ImageSquare extends React.Component<Props> {
-  render() {
-    return (
-      <Image imageUrl={this.props.imageUrl} imageClassName="image-square" />
-    );
-  }
-}
+const ImageSquare: React.FC<Props> = ({ imageUrl }) => {
+  return <Image imageUrl={imageUrl} imageClassName="image-square" />;
+};
 
 export default ImageSquare;

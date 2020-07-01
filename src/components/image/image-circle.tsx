@@ -5,12 +5,8 @@ interface Props {
   imageUrl: string;
 }
 
-class ImageCircle extends React.Component<Props> {
-  render() {
-    return (
-      <Image imageUrl={this.props.imageUrl} imageClassName="image-circle" />
-    );
-  }
-}
+const ImageCircle: React.FC<Props> = ({ imageUrl }) => {
+  return <Image imageUrl={imageUrl} imageClassName="image-circle" />;
+};
 
 export default ImageCircle;

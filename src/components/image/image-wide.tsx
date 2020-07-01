@@ -5,10 +5,8 @@ interface Props {
   imageUrl: string;
 }
 
-class ImageWide extends React.Component<Props> {
-  render() {
-    return <Image imageUrl={this.props.imageUrl} imageClassName="image-wide" />;
-  }
-}
+const ImageWide: React.FC<Props> = ({ imageUrl }) => {
+  return <Image imageUrl={imageUrl} imageClassName="image-wide" />;
+};
 
 export default ImageWide;

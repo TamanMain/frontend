@@ -6,17 +6,14 @@ interface Props {
   imageClassName?: string;
 }
 
-class Image extends React.Component<Props> {
-  render() {
-    const { imageClassName, imageUrl } = this.props;
-    return (
-      <div className={imageClassName ? imageClassName : "image"}>
-        <div className="image-container">
-          <img src={imageUrl} alt="" />
-        </div>
+const Image: React.FC<Props> = ({ imageUrl, imageClassName }) => {
+  return (
+    <div className={imageClassName ? imageClassName : "image"}>
+      <div className="image-container">
+        <img src={imageUrl} alt="" />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Image;

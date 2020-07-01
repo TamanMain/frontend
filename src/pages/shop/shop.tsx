@@ -6,20 +6,18 @@ import Categories from "../../components/categories/categories";
 
 import "./shop.css";
 
-class Shop extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Slideshow />
-        <Categories />
-        <CardsContainer />
-        <CardsContainer />
-        <CardsContainer />
-        <CardsContainer />
-        <DefaultNavbar />
-      </React.Fragment>
-    );
-  }
-}
+const Shop: React.FC = () => {
+  return (
+    <React.Fragment>
+      <Slideshow />
+      <Categories />
+      <CardsContainer />
+      <CardsContainer />
+      <CardsContainer />
+      <CardsContainer />
+      <DefaultNavbar />
+    </React.Fragment>
+  );
+};
 
 export default Shop;

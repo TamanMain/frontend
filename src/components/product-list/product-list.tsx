@@ -10,28 +10,24 @@ interface Props {
   title?: string;
 }
 
-class ProductList extends React.Component<Props> {
-  render() {
-    const { products, title } = this.props;
-
-    return title ? (
-      <ContainerWithTitle title={title}>
-        <div className="product-list">
-          {products.map((product) => {
-            return <Card product={product} key={product._id} />;
-          })}
-        </div>
-      </ContainerWithTitle>
-    ) : (
-      <Container>
-        <div className="product-list">
-          {products.map((product) => {
-            return <Card product={product} key={product._id} />;
-          })}
-        </div>
-      </Container>
-    );
-  }
-}
+const ProductList: React.FC<Props> = ({ products, title }) => {
+  return title ? (
+    <ContainerWithTitle title={title}>
+      <div className="product-list">
+        {products.map((product) => {
+          return <Card product={product} key={product._id} />;
+        })}
+      </div>
+    </ContainerWithTitle>
+  ) : (
+    <Container>
+      <div className="product-list">
+        {products.map((product) => {
+          return <Card product={product} key={product._id} />;
+        })}
+      </div>
+    </Container>
+  );
+};
 
 export default ProductList;
