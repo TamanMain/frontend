@@ -6,7 +6,7 @@ const ProductsData: ProductObject[] = [
     name: "Nanas Madu",
     quantity: 1,
     unit: "buah",
-    price: 4800,
+    price: 1234567890,
     isDiscount: true,
     discountPercent: 25,
     discountPrice: 3600,

@@ -11,7 +11,7 @@
   width: 20%;
   cursor: pointer;
   flex: 1 1 0%;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   text-decoration: none;
 }
 .default-navbar-item.active {
