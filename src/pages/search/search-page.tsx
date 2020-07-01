@@ -1,6 +1,6 @@
 import React from "react";
 import ProductList from "../../components/product-list/product-list";
-import ProductsData from "./../../libs/products-data";
+import ProductsData from "../../data/products-data";
 import "./search-page.css";
 
 const SearchPage: React.FC = () => {

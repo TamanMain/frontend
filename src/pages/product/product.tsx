@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ProductsData from "../../libs/products-data";
+import ProductsData from "../../data/products-data";
 import ImageSquare from "./../../components/image/image-square";
 import Container from "../../components/container/container";
 import CardDetailsFluid from "./../../components/card/card-details-fluid";
@@ -14,7 +14,7 @@ const Product: React.FC = () => {
   }, []); // componentDidMount
 
   const id = window.location.pathname.replace("/p/", "");
-  const product = ProductsData.find((item) => item._id === id);
+  const product = ProductsData.find((item) => item._id === Number.parseInt(id));
 
   return product ? (
     <React.Fragment>

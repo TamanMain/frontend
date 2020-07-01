@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../container/container";
 import SmallCard from "../card/small-card";
-import ProductsData from "../../libs/products-data";
+import ProductsData from "../../data/products-data";
 import "./cards-container.css";
 
 const CardsContainer: React.FC = () => {
