@@ -5,11 +5,12 @@ import * as currency from "../../libs/currency";
 
 interface Props {
   product: ProductObject;
+  className?: string;
 }
 
-const CardDetails: React.FC<Props> = ({ product }) => {
+const CardDetails: React.FC<Props> = ({ product, className }) => {
   return (
-    <div className="card-details">
+    <div className={className ? className : "card-details"}>
       <p className="card-details-name">{product.name}</p>
       <p className="card-details-quantity">{`${product.quantity} ${product.unit}`}</p>
       {product.isDiscount ? (

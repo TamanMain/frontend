@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import ProductsData from "../../libs/products-data";
 import ImageSquare from "./../../components/image/image-square";
 import Container from "../../components/container/container";
-import CardDetails from "./../../components/card/card-details";
+import CardDetailsFluid from "./../../components/card/card-details-fluid";
 import ContainerWithTitle from "./../../components/container/container-with-title";
 import PageNotFound from "../PageNotFound/page-not-found";
 import ProductNavbar from "../../components/navbar/product-navbar";
@@ -21,7 +21,7 @@ const Product: React.FC = () => {
       <ImageSquare imageUrl={"../" + product.images[0]} />
       <Container>
         <div className="mx-3">
-          <CardDetails product={product} />
+          <CardDetailsFluid product={product} />
         </div>
       </Container>
       <ContainerWithTitle title="Informasi Produk">
