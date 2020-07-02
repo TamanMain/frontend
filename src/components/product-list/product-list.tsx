@@ -10,23 +10,27 @@ interface Props {
   title?: string;
 }
 
+const getCards = (products: Product[]) => {
+  return (
+    <div className="product-list">
+      {products.length > 0 ? (
+        products.map((product) => {
+          return <Card product={product} key={product._id} />;
+        })
+      ) : (
+        <div className="col-100 center">
+          <i>No Product Found</i>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const ProductList: React.FC<Props> = ({ products, title }) => {
   return title ? (
-    <ContainerWithTitle title={title}>
-      <div className="product-list">
-        {products.map((product) => {
-          return <Card product={product} key={product._id} />;
-        })}
-      </div>
-    </ContainerWithTitle>
+    <ContainerWithTitle title={title}>{getCards(products)}</ContainerWithTitle>
   ) : (
-    <Container>
-      <div className="product-list">
-        {products.map((product) => {
-          return <Card product={product} key={product._id} />;
-        })}
-      </div>
-    </Container>
+    <Container>{getCards(products)}</Container>
   );
 };
 

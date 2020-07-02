@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProductList from "../../components/product-list/product-list";
-import ProductsData from "../../data/products-data";
+import axios from "axios";
+import { useLocation } from "react-router-dom";
 import "./search-page.css";
 
 const SearchPage: React.FC = () => {
+  const [products, setProducts] = useState([]);
+
+  const search = useLocation().search;
+
+  useEffect(() => {
+    const fetchProducts = async (url: string) => {
+      const { data } = await axios.get(url);
+      setProducts(data);
+    };
+    fetchProducts("http://192.168.0.101:5000/search" + search);
+  }, [search]);
+
   return (
     <div>
-      <ProductList title="Hasil Pencarian" products={ProductsData} />
+      <ProductList title="Hasil Pencarian" products={products} />
     </div>
   );
 };
