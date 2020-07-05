@@ -1,5 +1,5 @@
 import {
-  Cart,
+  CartProduct,
   CartState,
   CartActionTypes,
   CART_INCREASED,
@@ -8,7 +8,8 @@ import {
 } from "./types";
 
 const initialState: CartState = {
-  carts: [],
+  total: 0,
+  products: [],
 };
 
 export function cartReducer(
@@ -19,37 +20,47 @@ export function cartReducer(
     case CART_INCREASED:
     case CART_DECREASED:
     case CART_REMOVED:
-      return {
-        carts: processCarts(state.carts, action),
-      };
+      const carts = processCarts(state, action);
+      return { ...carts };
     default:
       return state;
   }
 }
 
-function processCarts(carts: Cart[], action: CartActionTypes): Cart[] {
-  const newCarts = carts.filter((c) => c.id !== action.payload.id);
-  const inCart = carts.find((c) => c.id === action.payload.id);
-  const cart: Cart = { id: action.payload.id, count: 1 };
+function processCarts(carts: CartState, action: CartActionTypes): CartState {
+  const { products } = carts;
+  let newTotal = carts.total;
+
+  const newProducts = products.filter((c) => c.id !== action.payload.id);
+  const productInCart = products.find((c) => c.id === action.payload.id);
+  const product: CartProduct = { id: action.payload.id, count: 1 };
 
   switch (action.type) {
     case CART_INCREASED:
-      if (inCart) {
-        cart.count = inCart.count + 1;
+      if (productInCart) {
+        product.count = productInCart.count + 1;
       }
-      newCarts.push(cart);
+      newTotal += 1;
+      newProducts.push(product);
       break;
     case CART_DECREASED:
-      if (inCart && inCart.count > 1) {
-        cart.count = inCart.count - 1;
-        newCarts.push(cart);
+      if (productInCart && productInCart.count > 1) {
+        product.count = productInCart.count - 1;
+        newProducts.push(product);
+        newTotal -= 1;
+      } else if (productInCart && productInCart.count === 1) {
+        // Removed from cart
+        newTotal -= 1;
       }
-      // else: Removed from cart
+      // else: Not in from cart
       break;
     case CART_REMOVED:
-      // Do nothing just return the new carts
+      // Removed from carts
+      if (productInCart) {
+        newTotal -= productInCart.count;
+      }
       break;
   }
 
-  return newCarts;
+  return { products: [...newProducts], total: newTotal };
 }

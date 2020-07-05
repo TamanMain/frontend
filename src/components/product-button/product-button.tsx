@@ -9,23 +9,23 @@ import {
   cartRemoved,
 } from "./../../store/cart/actions";
 import { AppState } from "../../store";
-import { Cart } from "./../../store/cart/types";
+import { CartState } from "./../../store/cart/types";
 
 interface Props {
   product: Product;
   cartIncresed: typeof cartIncresed;
   cartDecresed: typeof cartDecresed;
   cartRemoved: typeof cartRemoved;
-  carts: Cart[];
+  cart: CartState;
 }
 
 const ProductButton: React.FC<Props> = ({
   product,
-  carts,
+  cart,
   cartIncresed,
   cartDecresed,
 }) => {
-  const inCart = carts.find((c) => c.id === product._id);
+  const inCart = cart.products.find((c) => c.id === product._id);
   return (
     <div className="col-100 center">
       {!inCart ? (
@@ -44,7 +44,7 @@ const ProductButton: React.FC<Props> = ({
 };
 
 const mapStateToProps = (state: AppState) => ({
-  carts: state.cart.carts,
+  cart: state.cart,
 });
 
 export default connect(mapStateToProps, {

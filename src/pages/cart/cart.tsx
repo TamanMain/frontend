@@ -1,7 +1,7 @@
 import React from "react";
 import { AppState } from "../../store";
 import { connect } from "react-redux";
-import { Cart as TypeCart } from "../../store/cart/types";
+import { CartState, CartProduct } from "../../store/cart/types";
 import DefaultNavbar from "../../components/navbar/default-navbar";
 import ProductList from "../../components/product-list/product-list";
 import Product from "../../objects/Product";
@@ -10,11 +10,11 @@ import ProductsData from "../../data/products-data";
 import "./cart.css";
 
 interface Props {
-  carts: TypeCart[];
+  cart: CartState;
 }
 
-const Cart: React.FC<Props> = ({ carts }) => {
-  const cartProducts = getCart(ProductsData, carts);
+const Cart: React.FC<Props> = ({ cart }) => {
+  const cartProducts = getCart(ProductsData, cart.products);
 
   return (
     <React.Fragment>
@@ -24,12 +24,12 @@ const Cart: React.FC<Props> = ({ carts }) => {
   );
 };
 
-function getCart(products: Product[], filter?: TypeCart[]): Product[] {
+function getCart(products: Product[], filter?: CartProduct[]): Product[] {
   return products.filter((p) => filter?.find((c) => c.id === p._id));
 }
 
 const mapStateToProps = (state: AppState) => ({
-  carts: state.cart.carts,
+  cart: state.cart,
 });
 
 export default connect(mapStateToProps)(Cart);

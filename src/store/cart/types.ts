@@ -1,11 +1,12 @@
 // Describing the shape of the cart's slice of state
-export interface Cart {
+export interface CartProduct {
   id: string;
   count: number;
 }
 
 export interface CartState {
-  carts: Cart[];
+  total: number;
+  products: CartProduct[];
 }
 
 // Describing the different ACTION NAMES available
