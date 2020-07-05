@@ -31,13 +31,13 @@ const ProductButton: React.FC<Props> = ({
       {!inCart ? (
         <Button name="Beli" action={() => cartIncresed(product._id)} />
       ) : (
-        <React.Fragment>
+        <div className="col-100 center product-button-counter">
           <Button name="-" action={() => cartDecresed(product._id)} />
-          <div className="col-100 center product-button-counter">
+          <div className="col-100 center">
             <span>{inCart.count}</span>
           </div>
           <Button name="+" action={() => cartIncresed(product._id)} />
-        </React.Fragment>
+        </div>
       )}
     </div>
   );
