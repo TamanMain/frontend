@@ -1,20 +1,26 @@
-import React, { useEffect } from "react";
-import ProductsData from "../../data/products-data";
+import React, { useEffect, useState } from "react";
+import Axios from "axios";
 import ImageSquare from "./../../components/image/image-square";
 import Container from "../../components/container/container";
 import CardDetailsFluid from "./../../components/card/card-details-fluid";
 import ContainerWithTitle from "./../../components/container/container-with-title";
 import PageNotFound from "../PageNotFound/page-not-found";
 import ProductNavbar from "../../components/navbar/product-navbar";
+import { default as ProductObject } from "../../objects/Product";
 import "./product.css";
 
 const Product: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []); // componentDidMount
+  const [product, setProduct] = useState<ProductObject>();
 
-  const id = window.location.pathname.replace("/p/", "");
-  const product = ProductsData.find((item) => item._id === id);
+  useEffect(() => {
+    const fetchProducts = async (url: string) => {
+      const { data } = await Axios.get(url);
+      setProduct(data);
+    };
+    window.scrollTo(0, 0);
+    const id = window.location.pathname.replace("/p/", "");
+    fetchProducts("http://192.168.0.101:5000/p/" + id);
+  }, []);
 
   return product ? (
     <React.Fragment>

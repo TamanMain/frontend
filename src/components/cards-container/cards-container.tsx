@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 import Container from "../container/container";
 import SmallCard from "../card/small-card";
-import ProductsData from "../../data/products-data";
+import Product from "./../../objects/Product";
 import "./cards-container.css";
 
 const CardsContainer: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async (url: string) => {
+      const { data } = await Axios.get(url);
+      setProducts(data.products);
+    };
+    fetchProducts("http://192.168.0.101:5000/products");
+  }, []);
+
   return (
     <Container>
       <div className="cards-container">
@@ -25,9 +36,11 @@ const CardsContainer: React.FC = () => {
           alt=""
         />
         <div className="cards-container-list">
-          {ProductsData.map((product) => {
-            return <SmallCard product={product} key={product._id} />;
-          })}
+          {products
+            ? products.map((product) => {
+                return <SmallCard product={product} key={product._id} />;
+              })
+            : null}
         </div>
       </div>
     </Container>
