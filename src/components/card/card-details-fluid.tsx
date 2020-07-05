@@ -1,9 +1,9 @@
 import React from "react";
-import ProductObject from "../../libs/ProductObject";
+import Product from "../../objects/Product";
 import CardDetails from "./card-details";
 
 interface Props {
-  product: ProductObject;
+  product: Product;
 }
 
 const CardDetailsFluid: React.FC<Props> = ({ product }) => {

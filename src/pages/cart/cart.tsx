@@ -1,17 +1,20 @@
 import React from "react";
+import { AppState } from "../../store";
+import { connect } from "react-redux";
+import { Cart as TypeCart } from "../../store/cart/types";
 import DefaultNavbar from "../../components/navbar/default-navbar";
 import ProductList from "../../components/product-list/product-list";
-import Product from "./../../libs/ProductObject";
+import Product from "../../objects/Product";
 import ProductsData from "../../data/products-data";
-import account from "../../data/account-data.json";
+
 import "./cart.css";
 
-function getCart(products: Product[], filter?: number[]): Product[] {
-  return products.filter((p) => filter?.includes(p._id));
+interface Props {
+  carts: TypeCart[];
 }
 
-const Cart: React.FC = () => {
-  const cartProducts = getCart(ProductsData, account.cart);
+const Cart: React.FC<Props> = ({ carts }) => {
+  const cartProducts = getCart(ProductsData, carts);
 
   return (
     <React.Fragment>
@@ -21,4 +24,12 @@ const Cart: React.FC = () => {
   );
 };
 
-export default Cart;
+function getCart(products: Product[], filter?: TypeCart[]): Product[] {
+  return products.filter((p) => filter?.find((c) => c.id === p._id));
+}
+
+const mapStateToProps = (state: AppState) => ({
+  carts: state.cart.carts,
+});
+
+export default connect(mapStateToProps)(Cart);

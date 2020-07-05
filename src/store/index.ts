@@ -8,6 +8,8 @@ const rootReducer = combineReducers({
   cart: cartReducer,
 });
 
+export type AppState = ReturnType<typeof rootReducer>;
+
 export default function configureStore() {
   const middlewares = [thunkMiddleware];
   const middleWareEnhancer = applyMiddleware(...middlewares);

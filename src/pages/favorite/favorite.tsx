@@ -2,11 +2,11 @@ import React from "react";
 import DefaultNavbar from "../../components/navbar/default-navbar";
 import ProductList from "../../components/product-list/product-list";
 import ProductsData from "../../data/products-data";
-import Product from "./../../libs/ProductObject";
+import Product from "../../objects/Product";
 import account from "../../data/account-data.json";
 import "./favorite.css";
 
-function getFavorite(products: Product[], filter: number[]): Product[] {
+function getFavorite(products: Product[], filter: string[]): Product[] {
   return products.filter((p) => filter.includes(p._id));
 }
 

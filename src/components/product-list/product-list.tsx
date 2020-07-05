@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../container/container";
 import ContainerWithTitle from "./../container/container-with-title";
-import Product from "./../../libs/ProductObject";
+import Product from "../../objects/Product";
 import Card from "../card/card";
 import "./product-list.css";
 

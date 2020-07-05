@@ -1,8 +1,8 @@
-import ProductObject from "../libs/ProductObject";
+import Product from "../objects/Product";
 
-const ProductsData: ProductObject[] = [
+const ProductsData: Product[] = [
   {
-    _id: 0,
+    _id: "0",
     name: "Nanas Madu",
     quantity: 1,
     unit: "buah",
@@ -15,7 +15,7 @@ const ProductsData: ProductObject[] = [
       "Nanas Madu relatif berukuran lebih kecil dari jenis nanas lainnya walaupun sama-sama berwarna kuning nanas madu memiliki rasa dan aroma yang lebih manis, berserat, lebih lunak daripada nanas lainnya. Biasanya tunggu matang hingga 1-2 hari terlebih dahulu",
   },
   {
-    _id: 1,
+    _id: "1",
     name: "Mangga Harum Manis",
     quantity: 500,
     unit: "gram",
@@ -23,7 +23,7 @@ const ProductsData: ProductObject[] = [
     images: ["./images/mangga.jpg"],
   },
   {
-    _id: 2,
+    _id: "2",
     name: "Kembang Kol",
     quantity: 250,
     unit: "gram",
@@ -31,7 +31,7 @@ const ProductsData: ProductObject[] = [
     images: ["./images/kol.jpg"],
   },
   {
-    _id: 3,
+    _id: "3",
     name:
       "Pisang Fresh Mulus Warna Kuning Cerah Dipetik Dari Perkebunan Pribadi",
     quantity: 1,
@@ -43,7 +43,7 @@ const ProductsData: ProductObject[] = [
     images: ["./images/pisang.jpg"],
   },
   {
-    _id: 4,
+    _id: "4",
     name: "Timun",
     quantity: 250,
     unit: "gram",
@@ -51,7 +51,7 @@ const ProductsData: ProductObject[] = [
     images: ["./images/timun.jpg"],
   },
   {
-    _id: 5,
+    _id: "5",
     name: "Raspberry",
     quantity: 500,
     unit: "gram",

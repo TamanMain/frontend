@@ -1,10 +1,10 @@
 import React from "react";
-import ProductObject from "../../libs/ProductObject";
+import Product from "../../objects/Product";
 import Card from "./card";
 import "./small-card.css";
 
 interface Props {
-  product: ProductObject;
+  product: Product;
 }
 
 const SmallCard: React.FC<Props> = ({ product }) => {

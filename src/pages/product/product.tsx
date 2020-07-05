@@ -14,7 +14,7 @@ const Product: React.FC = () => {
   }, []); // componentDidMount
 
   const id = window.location.pathname.replace("/p/", "");
-  const product = ProductsData.find((item) => item._id === Number.parseInt(id));
+  const product = ProductsData.find((item) => item._id === id);
 
   return product ? (
     <React.Fragment>
@@ -32,7 +32,7 @@ const Product: React.FC = () => {
           </div>
         </div>
       </ContainerWithTitle>
-      <ProductNavbar />
+      <ProductNavbar product={product} />
     </React.Fragment>
   ) : (
     <PageNotFound />

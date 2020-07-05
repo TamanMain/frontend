@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductObject from "../../libs/ProductObject";
+import Product from "../../objects/Product";
 import CardDetails from "./card-details";
 import ImageSquare from "../image/image-square";
 import ProductButton from "../product-button/product-button";
 import "./card.css";
 
 interface Props {
-  product: ProductObject;
+  product: Product;
   cardWidthClass?: string;
 }
 
@@ -23,7 +23,7 @@ const Card: React.FC<Props> = ({ product, cardWidthClass }) => {
             </div>
           </Link>
           <div className="p-1">
-            <ProductButton />
+            <ProductButton product={product} />
           </div>
         </div>
       </div>

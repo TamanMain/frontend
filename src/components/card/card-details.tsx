@@ -1,10 +1,10 @@
 import React from "react";
-import ProductObject from "../../libs/ProductObject";
+import Product from "../../objects/Product";
 import "./card-details.css";
 import * as currency from "../../libs/currency";
 
 interface Props {
-  product: ProductObject;
+  product: Product;
   className?: string;
 }
 
