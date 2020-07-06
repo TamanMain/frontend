@@ -14,7 +14,7 @@ const SearchPage: React.FC = () => {
       const { data } = await axios.get(url);
       setProducts(data);
     };
-    fetchProducts("http://192.168.0.101:5000/search" + search);
+    fetchProducts("/search" + search);
   }, [search]);
 
   return (

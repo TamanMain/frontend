@@ -13,7 +13,7 @@ const Favorite: React.FC = () => {
       const { data } = await Axios.get(url);
       setFavProducts(data.products);
     };
-    fetchProducts("http://192.168.0.101:5000/favorite");
+    fetchProducts("/favorite");
   }, []);
 
   return (

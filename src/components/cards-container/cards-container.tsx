@@ -13,7 +13,7 @@ const CardsContainer: React.FC = () => {
       const { data } = await Axios.get(url);
       setProducts(data.products);
     };
-    fetchProducts("http://192.168.0.101:5000/products");
+    fetchProducts("/products");
   }, []);
 
   return (

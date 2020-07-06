@@ -19,7 +19,7 @@ const Product: React.FC = () => {
     };
     window.scrollTo(0, 0);
     const id = window.location.pathname.replace("/p/", "");
-    fetchProducts("http://192.168.0.101:5000/p/" + id);
+    fetchProducts("/p/" + id);
   }, []);
 
   return product ? (
