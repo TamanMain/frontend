@@ -17,7 +17,14 @@ const Cart: React.FC<Props> = ({ cart }) => {
 
   const fetchProducts = async (url: string) => {
     const { data } = await Axios.get(url);
-    setProducts((products) => [...products, data]);
+    setProducts((products) => {
+      const inProducts = products.find((p) => p._id === data._id);
+      if (inProducts) {
+        return [...products];
+      } else {
+        return [...products, data];
+      }
+    });
   };
 
   useEffect(() => {
