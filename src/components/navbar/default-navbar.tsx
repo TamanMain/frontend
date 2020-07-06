@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarBottom from "./navbar-Bottom";
+import NavbarBottom from "./navbar-bottom";
 import DefaultNavbarItem from "./default-navbar-item";
 
 import shop from "./images/shop.svg";

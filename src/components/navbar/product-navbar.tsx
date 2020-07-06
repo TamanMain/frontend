@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "../../objects/Product";
-import NavbarBottom from "./navbar-Bottom";
+import NavbarBottom from "./navbar-bottom";
 import ProductButton from "./../product-button/product-button";
 import "./product-navbar.css";
 
