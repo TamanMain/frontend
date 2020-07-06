@@ -15,13 +15,16 @@ interface Props {
 const Cart: React.FC<Props> = ({ cart }) => {
   const [products, setProducts] = useState<Product[]>([]);
 
+  const fetchProducts = async (url: string) => {
+    const { data } = await Axios.get(url);
+    setProducts((products) => [...products, data]);
+  };
+
   useEffect(() => {
-    const fetchProducts = async (url: string) => {
-      const { data } = await Axios.get(url);
-      setProducts(data.products);
-    };
-    fetchProducts("/products");
-  }, []);
+    for (let i = 0; i < cart.products.length; i++) {
+      fetchProducts("/p/" + cart.products[i].id);
+    }
+  }, [cart.products]);
 
   return (
     <React.Fragment>
