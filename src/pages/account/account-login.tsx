@@ -32,7 +32,7 @@ const AccountLogin: React.FC = () => {
           <div>
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
