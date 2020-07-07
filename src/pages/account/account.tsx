@@ -1,40 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import AccountLogin from "./account-login";
 import DefaultNavbar from "../../components/navbar/default-navbar";
+import { useSelector } from "react-redux";
+import { AppState } from "../../store";
+import AccountDetails from "./account-details";
 import "./account.css";
 
 const Account: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(email, password);
-  };
+  const account = useSelector((state: AppState) => state.account);
 
   return (
     <React.Fragment>
-      <div className="account-login">
-        <p>Login</p>
-        <form className="col-100" onSubmit={handleSubmit}>
-          <div>
-            <input
-              type="text"
-              placeholder="Username"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div>
-            <input
-              type="password"
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div>
-            <input type="submit" value="Login" />
-          </div>
-        </form>
-      </div>
+      {account.token ? <AccountDetails /> : <AccountLogin />}
       <DefaultNavbar />
     </React.Fragment>
   );
