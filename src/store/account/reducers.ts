@@ -3,6 +3,9 @@ import {
   AccountState,
   AccountStatus,
   AccountActionTypes,
+  ACCOUNT_REGISTER_REQUEST,
+  ACCOUNT_REGISTER_SUCCESS,
+  ACCOUNT_REGISTER_FAIL,
   ACCOUNT_SIGN_IN_REQUEST,
   ACCOUNT_SIGN_IN_SUCCESS,
   ACCOUNT_SIGN_IN_FAIL,
@@ -25,6 +28,18 @@ function accountReducer(
   action: AccountActionTypes
 ): AccountState {
   switch (action.type) {
+    case ACCOUNT_REGISTER_REQUEST:
+      return { ...state, status: AccountStatus.RegisterRequest };
+    case ACCOUNT_REGISTER_FAIL:
+      return { ...state, status: AccountStatus.RegisterFail };
+    case ACCOUNT_REGISTER_SUCCESS:
+      return {
+        status: AccountStatus.RegisterSuccess,
+        name: action.payload.name,
+        email: action.payload.email,
+        token: "",
+      };
+
     case ACCOUNT_SIGN_IN_REQUEST:
       return {
         ...state,
@@ -40,6 +55,7 @@ function accountReducer(
         email: action.payload.email,
         token: action.payload.token,
       };
+
     case ACCOUNT_SIGN_OUT_REQUEST:
       return { ...state, status: AccountStatus.SignOutRequest };
     case ACCOUNT_SIGN_OUT_FAIL:
@@ -51,6 +67,7 @@ function accountReducer(
         email: action.payload.email,
         token: action.payload.token,
       };
+
     default:
       return state;
   }

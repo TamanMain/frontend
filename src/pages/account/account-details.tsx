@@ -19,8 +19,9 @@ const AccountDetails: React.FC = () => {
   return (
     <React.Fragment>
       <div className="account-login">
-        <p>{account.name}</p>
+        <h3>{account.name}</h3>
         <p>{account.email}</p>
+        <br />
         <ButtonSecondary name="Sign Out" action={signOutHandler} />
       </div>
     </React.Fragment>
