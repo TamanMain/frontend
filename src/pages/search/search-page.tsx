@@ -14,7 +14,7 @@ const SearchPage: React.FC = () => {
       const { data } = await axios.get(url);
       setProducts(data);
     };
-    fetchProducts("/search" + search);
+    fetchProducts(process.env.REACT_APP_API_URI + "/search" + search);
   }, [search]);
 
   return (

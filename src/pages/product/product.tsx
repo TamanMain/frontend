@@ -19,7 +19,7 @@ const Product: React.FC = () => {
     };
     window.scrollTo(0, 0);
     const id = window.location.pathname.replace("/p/", "");
-    fetchProducts("/p/" + id);
+    fetchProducts(process.env.REACT_APP_API_URI + "/p/" + id);
   }, []);
 
   return product ? (

@@ -13,7 +13,7 @@ const CardsContainer: React.FC = () => {
       const { data } = await Axios.get(url);
       setProducts(data.products);
     };
-    fetchProducts("/products");
+    fetchProducts(process.env.REACT_APP_API_URI + "/products");
   }, []);
 
   return (

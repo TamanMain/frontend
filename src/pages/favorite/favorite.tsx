@@ -13,7 +13,7 @@ const Favorite: React.FC = () => {
       const { data } = await Axios.get(url);
       setFavProducts(data.products);
     };
-    fetchProducts("/favorite");
+    fetchProducts(process.env.REACT_APP_API_URI + "/favorite");
   }, []);
 
   return (

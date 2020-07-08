@@ -3,10 +3,12 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+import dotenv from "dotenv";
 import { Provider } from "react-redux";
 import configureStore from "./store";
 import "./index.css";
 
+dotenv.config();
 const store = configureStore();
 
 const Root = () => (

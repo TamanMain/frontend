@@ -29,7 +29,9 @@ const Cart: React.FC<Props> = ({ cart }) => {
 
   useEffect(() => {
     for (let i = 0; i < cart.products.length; i++) {
-      fetchProducts("/p/" + cart.products[i].id);
+      fetchProducts(
+        process.env.REACT_APP_API_URI + "/p/" + cart.products[i].id
+      );
     }
   }, [cart.products]);
 
