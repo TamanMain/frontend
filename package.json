@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "http://192.168.0.110:5000",
+  "proxy": "http://api.tamanmain.xyz",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -49,5 +49,8 @@
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.5",
     "typescript": "^3.9.6"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
