@@ -11,11 +11,17 @@ import "./product.css";
 
 const Product: React.FC = () => {
   const [product, setProduct] = useState<ProductObject>();
+  const [notFound, setNotFound] = useState<string>();
 
   useEffect(() => {
     const fetchProducts = async (url: string) => {
-      const { data } = await Axios.get(url);
-      setProduct(data);
+      Axios.get(url)
+        .then(({ data }) => {
+          setProduct(data);
+        })
+        .catch((error) => {
+          setNotFound("Product not found");
+        });
     };
     window.scrollTo(0, 0);
     const id = window.location.pathname.replace("/p/", "");
@@ -40,8 +46,10 @@ const Product: React.FC = () => {
       </ContainerWithTitle>
       <ProductNavbar product={product} />
     </React.Fragment>
-  ) : (
+  ) : notFound ? (
     <PageNotFound />
+  ) : (
+    <p>Loading...</p>
   );
 };
 
