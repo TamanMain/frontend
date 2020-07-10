@@ -11,7 +11,7 @@ const CardsContainer: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async (url: string) => {
       const { data } = await Axios.get(url);
-      setProducts(data.products);
+      setProducts(data.data.items);
     };
     fetchProducts(process.env.REACT_APP_API_URI + "/products");
   }, []);

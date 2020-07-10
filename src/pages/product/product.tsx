@@ -17,15 +17,15 @@ const Product: React.FC = () => {
     const fetchProducts = async (url: string) => {
       Axios.get(url)
         .then(({ data }) => {
-          setProduct(data);
+          setProduct(data.data.items[0]);
         })
-        .catch((error) => {
+        .catch(() => {
           setNotFound("Product not found");
         });
     };
     window.scrollTo(0, 0);
     const id = window.location.pathname.replace("/p/", "");
-    fetchProducts(process.env.REACT_APP_API_URI + "/p/" + id);
+    fetchProducts(process.env.REACT_APP_API_URI + "/products/" + id);
   }, []);
 
   return product ? (
