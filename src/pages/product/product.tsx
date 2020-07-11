@@ -15,7 +15,7 @@ const Product: React.FC = () => {
 
   useEffect(() => {
     const fetchProducts = async (url: string) => {
-      Axios.get(url)
+      await Axios.get(url)
         .then(({ data }) => {
           setProduct(data.data.items[0]);
         })
@@ -23,9 +23,10 @@ const Product: React.FC = () => {
           setNotFound("Product not found");
         });
     };
+
     window.scrollTo(0, 0);
-    const id = window.location.pathname.replace("/p/", "");
-    fetchProducts(process.env.REACT_APP_API_URI + "/products/" + id);
+    const id = window.location.pathname;
+    fetchProducts(process.env.REACT_APP_API_URI + id);
   }, []);
 
   return product ? (

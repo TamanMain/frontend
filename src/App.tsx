@@ -33,7 +33,7 @@ function App() {
           <Account />
         </Route>
 
-        <Route path="/p/:id">
+        <Route path="/products/:id">
           <Product />
         </Route>
         <Route path="/search">

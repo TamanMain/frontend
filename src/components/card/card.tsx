@@ -16,7 +16,7 @@ const Card: React.FC<Props> = ({ product, cardWidthClass }) => {
     <div className={cardWidthClass ? cardWidthClass : "col-50"}>
       <div className="p-1 ">
         <div className="card">
-          <Link to={`/p/${product._id}`}>
+          <Link to={`/products/${product._id}`}>
             <ImageSquare imageUrl={product.images[0]} />
             <div className="p-1">
               <CardDetails product={product} />

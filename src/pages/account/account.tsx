@@ -4,9 +4,9 @@ import DefaultNavbar from "../../components/navbar/default-navbar";
 import { useSelector } from "react-redux";
 import { AppState } from "../../store";
 import AccountDetails from "./account-details";
-import "./account.css";
 import AccountRegister from "./account-register";
 import { useLocation } from "react-router-dom";
+import "./account.css";
 
 const Account: React.FC = () => {
   const account = useSelector((state: AppState) => state.account);
