@@ -12,7 +12,7 @@ const SearchPage: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async (url: string) => {
       const { data } = await axios.get(url);
-      setProducts(data);
+      setProducts(data.data.items);
     };
     fetchProducts(process.env.REACT_APP_API_URI + "/search" + search);
   }, [search]);

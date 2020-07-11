@@ -28,7 +28,7 @@ const GroupCategories: React.FC = () => {
         {categories.map((category: ICategory) => {
           return (
             <CategoriesItem
-              link={"/search?p=" + category.name}
+              link={"/search?category=" + category.name}
               name={category.displayName}
               icon={category.icon}
               key={category.name}

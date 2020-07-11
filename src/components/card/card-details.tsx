@@ -16,13 +16,11 @@ const CardDetails: React.FC<Props> = ({ product, className }) => {
       {product.isDiscount ? (
         <div>
           <span className="card-details-price">
-            {currency.formatToRupiah(product.price)}
+            {currency.formatToRupiah(product.actualPrice)}
           </span>
-          <span className="card-details-discount">{`${product.discountPercent}%`}</span>
+          <span className="card-details-discount">{`${product.discount}%`}</span>
           <p className="card-details-discount-price">
-            {currency.formatToRupiah(
-              product.discountPrice ? product.discountPrice : product.price
-            )}
+            {currency.formatToRupiah(product.price)}
           </p>
         </div>
       ) : (

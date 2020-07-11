@@ -22,7 +22,7 @@ const Cart: React.FC<Props> = ({ cart }) => {
       if (inProducts) {
         return [...products];
       } else {
-        return [...products, data];
+        return [...products, data.data.items[0]];
       }
     });
   };
@@ -30,7 +30,7 @@ const Cart: React.FC<Props> = ({ cart }) => {
   useEffect(() => {
     for (let i = 0; i < cart.products.length; i++) {
       fetchProducts(
-        process.env.REACT_APP_API_URI + "/p/" + cart.products[i].id
+        process.env.REACT_APP_API_URI + "/products/" + cart.products[i].id
       );
     }
   }, [cart.products]);

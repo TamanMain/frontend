@@ -13,8 +13,6 @@ const Shop: React.FC = () => {
       <Categories />
       <CardsContainer />
       <CardsContainer />
-      <CardsContainer />
-      <CardsContainer />
       <DefaultNavbar />
     </React.Fragment>
   );
