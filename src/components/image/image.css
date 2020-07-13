@@ -17,6 +17,9 @@
   object-fit: cover;
   /* border-radius: 4px 4px 0 0; */
 }
+.image-container img.hide {
+  display: none;
+}
 .image-square {
   position: relative;
   width: 100%;
