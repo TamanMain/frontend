@@ -23,18 +23,11 @@ const GroupCategories: React.FC = () => {
     fetchCategories();
   }, []);
 
-  return categories ? (
+  return categories.length > 0 ? (
     <Container>
       <div className="group-categories">
         {categories.map((category: ICategory) => {
-          return (
-            <CategoriesItem
-              link={"/search?category=" + category.name}
-              name={category.displayName}
-              icon={category.icon}
-              key={category.name}
-            />
-          );
+          return <CategoriesItem category={category} key={category.name} />;
         })}
       </div>
     </Container>

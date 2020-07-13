@@ -4,8 +4,8 @@ import Container from "../container/container";
 import SmallCard from "../card/small-card";
 import Product from "./../../objects/Product";
 import config from "../../config";
+import { Skeleton } from "../skeleton/skeleton";
 import "./cards-container.css";
-import Skeleton from "../skeleton/skeleton";
 
 const CardsContainer: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);

@@ -17,13 +17,14 @@
   color: #585858;
   margin-bottom: 8px;
 }
-.group-categories-item img {
+.group-categories-item-image {
   width: 40px;
   height: 40px;
   margin-top: 0;
   margin-bottom: 4px;
 }
-.group-categories-item span {
-  line-height: 1rem;
+.group-categories-item-text {
+  height: 1rem;
+  width: 100%;
   margin: 0 6px;
 }
