@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import config from "../../config";
 import ImageSquare from "./../../components/image/image-square";
 import Container from "../../components/container/container";
 import CardDetailsFluid from "./../../components/card/card-details-fluid";
@@ -26,7 +27,7 @@ const Product: React.FC = () => {
 
     window.scrollTo(0, 0);
     const id = window.location.pathname;
-    fetchProducts(process.env.REACT_APP_API_URI + id);
+    fetchProducts(config.API_URI + id);
   }, []);
 
   return product ? (

@@ -6,6 +6,7 @@ import { CartState } from "../../store/cart/types";
 import DefaultNavbar from "../../components/navbar/default-navbar";
 import ProductList from "../../components/product-list/product-list";
 import Product from "../../objects/Product";
+import config from "../../config";
 import "./cart.css";
 
 interface Props {
@@ -29,9 +30,7 @@ const Cart: React.FC<Props> = ({ cart }) => {
 
   useEffect(() => {
     for (let i = 0; i < cart.products.length; i++) {
-      fetchProducts(
-        process.env.REACT_APP_API_URI + "/products/" + cart.products[i].id
-      );
+      fetchProducts(config.API_URI + "/products/" + cart.products[i].id);
     }
   }, [cart.products]);
 

@@ -3,17 +3,24 @@ import Axios from "axios";
 import Container from "../container/container";
 import SmallCard from "../card/small-card";
 import Product from "./../../objects/Product";
+import config from "../../config";
 import "./cards-container.css";
+import Skeleton from "../skeleton/skeleton";
 
 const CardsContainer: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchProducts = async (url: string) => {
-      const { data } = await Axios.get(url);
-      setProducts(data.data.items);
+      await Axios.get(url)
+        .then(({ data }) => {
+          setProducts(data.data.items);
+        })
+        .catch((err) => {
+          // console.log(err);
+        });
     };
-    fetchProducts(process.env.REACT_APP_API_URI + "/products");
+    fetchProducts(config.API_URI + "/products");
   }, []);
 
   return (
@@ -30,11 +37,12 @@ const CardsContainer: React.FC = () => {
             <span>Lihat Semua</span>
           </a>
         </div>
-        <img
+        {/* <img
           src={"/images/header.jpg"}
           className="cards-container-image"
           alt=""
-        />
+        /> */}
+        <Skeleton />
         <div className="cards-container-list">
           {products
             ? products.map((product) => {

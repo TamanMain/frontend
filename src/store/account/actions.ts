@@ -13,6 +13,7 @@ import {
   ACCOUNT_SIGN_OUT_SUCCESS,
   ACCOUNT_SIGN_OUT_FAIL,
 } from "./types";
+import config from "../../config";
 
 const register = (name: string, email: string, password: string) => async (
   dispatch: Dispatch
@@ -22,14 +23,11 @@ const register = (name: string, email: string, password: string) => async (
     payload: { name, email, password },
   });
   try {
-    const { data } = await Axios.post(
-      process.env.REACT_APP_API_URI + "/users/register",
-      {
-        name,
-        email,
-        password,
-      }
-    );
+    const { data } = await Axios.post(config.API_URI + "/users/register", {
+      name,
+      email,
+      password,
+    });
     const account = { ...data, status: AccountStatus.RegisterSuccess };
     dispatch({
       type: ACCOUNT_REGISTER_SUCCESS,
@@ -45,13 +43,10 @@ const signIn = (email: string, password: string) => async (
 ) => {
   dispatch({ type: ACCOUNT_SIGN_IN_REQUEST, payload: { email, password } });
   try {
-    const { data } = await Axios.post(
-      process.env.REACT_APP_API_URI + "/users/login",
-      {
-        email,
-        password,
-      }
-    );
+    const { data } = await Axios.post(config.API_URI + "/users/login", {
+      email,
+      password,
+    });
     const account = { ...data, status: AccountStatus.SignedIn };
     dispatch({
       type: ACCOUNT_SIGN_IN_SUCCESS,
@@ -66,7 +61,7 @@ const signIn = (email: string, password: string) => async (
 const signOut = (email: string) => async (dispatch: Dispatch) => {
   dispatch({ type: ACCOUNT_SIGN_OUT_REQUEST });
   try {
-    // const { data } = await Axios.post(process.env.REACT_APP_API_URI + "/users/signout", { email });
+    // const { data } = await Axios.post(config.API_URI + "/users/signout", { email });
     const account = {
       status: AccountStatus.SignedOut,
       token: "",
