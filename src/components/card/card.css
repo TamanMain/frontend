@@ -5,14 +5,29 @@
   overflow: hidden;
   box-shadow: rgba(128, 128, 128, 0.25) 0 2px 6px 0;
 }
-.card-button {
-  width: 100%;
+.card-image-skeleton {
+  width: 10rem;
+  height: 10rem;
+}
+.card-content-skeleton {
+  padding: 0.25rem;
+  height: 7rem;
+}
+.card-content-skeleton .skeleton:first-child {
+  width: 90%;
+  height: 1.5rem;
+}
+.card-content-skeleton .skeleton:nth-child(2) {
+  width: 40%;
+}
+.card-content-skeleton .skeleton:nth-child(3) {
+  width: 50%;
+}
+.card-button-skeleton {
+  padding: 0.25rem;
   height: 2rem;
-  padding: 0 0.5rem;
-  border: none;
-  background-color: #47b04b;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
+  border-radius: 0.25rem;
+}
+.card-button-skeleton .skeleton {
+  border-radius: 0.25rem;
 }

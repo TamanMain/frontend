@@ -4,7 +4,6 @@ import Container from "../container/container";
 import SmallCard from "../card/small-card";
 import Product from "./../../objects/Product";
 import config from "../../config";
-import { Skeleton } from "../skeleton/skeleton";
 import "./cards-container.css";
 
 const CardsContainer: React.FC = () => {
@@ -37,12 +36,11 @@ const CardsContainer: React.FC = () => {
             <span>Lihat Semua</span>
           </a>
         </div>
-        {/* <img
+        <img
           src={"/images/header.jpg"}
           className="cards-container-image"
           alt=""
-        /> */}
-        <Skeleton />
+        />
         <div className="cards-container-list">
           {products
             ? products.map((product) => {

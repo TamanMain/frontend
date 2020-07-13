@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { SkeletonCircle, SkeletonText } from "../skeleton/skeleton";
+import { SkeletonCircle, Skeleton } from "../skeleton/skeleton";
 import ICategory from "./ICategory";
 import ImageSquare from "../image/image-square";
 
@@ -23,7 +23,7 @@ const GroupCategoriesItem: React.FC<Props> = ({ category }) => {
         <SkeletonCircle />
       </div>
       <div className="group-categories-item-text">
-        <SkeletonText />
+        <Skeleton />
       </div>
     </div>
   ) : (

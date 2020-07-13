@@ -26,5 +26,10 @@
 .group-categories-item-text {
   height: 1rem;
   width: 100%;
-  margin: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group-categories-item-text .skeleton {
+  width: 50%;
 }
